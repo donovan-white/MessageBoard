@@ -1,0 +1,7 @@
+.noborder tr {
+    border-style: none !important;
+}
+
+.noborder td {
+    border-style: none !important;
+}

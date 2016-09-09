@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>1.0</id>
+    <formats>
+        <format>dir</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory> 
+    <fileSets>
+        <fileSet>
+            <directory>assembly/docker</directory>
+            <outputDirectory>target/docker</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+                <include>Dockerfile</include>
+                <include>catalina.sh</include>
+                <include>log4j.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>target/docker</outputDirectory>
+            <includes>
+                <include>MessageBoard-${project-version}.war</include>
+            </includes>
+        </fileSet>        
+    </fileSets>
+</assembly>

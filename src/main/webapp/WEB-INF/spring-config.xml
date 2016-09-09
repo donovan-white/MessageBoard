@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">  
+    
+    <!-- new NonBlockingStatsDClient("argos.mb", "10.131.24.68", 30011) -->    
+    <bean id="statsdClient" class="com.timgroup.statsd.NonBlockingStatsDClient">
+        <constructor-arg value="#{systemProperties['statsd.prefix']}"/>
+        <constructor-arg value="#{systemProperties['statsd.ip']}"/>
+        <constructor-arg value="#{ T(java.lang.Integer).parseInt(systemProperties['statsd.port'])}"/>
+    </bean>
+    
+    <bean id="dataDir" class="java.lang.String">
+        <constructor-arg value="#{systemProperties['data.dir']}"/>
+    </bean>     
+
+</beans>
