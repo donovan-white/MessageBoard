@@ -8,7 +8,7 @@ spec:
     metadata:
       labels:
         app: messageboard
-        version: "1.2"
+        version: "1.JENKINS_BUILD_VERSION_NUMBER"
     spec:
       containers:
         - name: messageboard
