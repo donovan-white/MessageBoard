@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: messageboard
+data:
+  setenv.sh: |-
+    CATALINA_OPTS="-Dstatsd.prefix=\"argos.mb\" -Dstatsd.ip=\"10.3.0.18\" -Dstatsd.port=\"8125\" -Dlog4j.ip=\"10.3.0.197\" -Dlog4j.port=\"4560\" -Ddata.dir=\"/media\""
